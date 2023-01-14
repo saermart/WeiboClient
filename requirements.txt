@@ -1,0 +1,6 @@
+pymongo==4.3.3
+requests==2.28.1
+PyExecJS==1.5.1
+opencv-python==4.6.0.66
+w3lib==2.1.1
+PyYAML==6.0
