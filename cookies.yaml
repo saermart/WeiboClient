@@ -3,9 +3,9 @@ cookies:
   # Just copy and paste the cookie value of the browser request "headers".
   # Cookies of web version:
   web:
-    -
+    - xxxxxx
 
 
   # Cookies of H5 version:
   h5:
-    -
+    - xxxxxx
