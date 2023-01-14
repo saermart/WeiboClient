@@ -102,15 +102,16 @@
 from weibo import WeiBoClient
 
 client = WeiBoClient()
-
+# 用户uid
+uid = '2803301701'
 # 默认保存结果至MongoDB,可以看接口源码注释
-user_info = client.fetch_user_info()
+user_info = client.fetch_user_info(uid)
 
 # 如果不保存结果至MongoDB
-user_info_dont_save = client.fetch_user_info(into_mongo=False)
+user_info_dont_save = client.fetch_user_info(uid, into_mongo=False)
 
 # 如果需要保存结果至MongoDB的“用户信息”数据库中的“简要信息”集合
-user_info_saved = client.fetch_user_info(dbName="用户信息", collectionName="简要信息")
+user_info_saved = client.fetch_user_info(uid, dbName="用户信息", collectionName="简要信息")
 ```
 
 返回：
@@ -173,15 +174,16 @@ user_info_saved = client.fetch_user_info(dbName="用户信息", collectionName="
 from weibo import WeiBoClient
 
 client = WeiBoClient()
-
+# 用户uid
+uid = '2803301701'
 # 默认保存结果至MongoDB,可以看接口源码注释
-user_info = client.query_user_details()
+user_info = client.query_user_details(uid)
 
 # 如果不保存结果至MongoDB
-user_info_dont_save = client.query_user_details(into_mongo=False)
+user_info_dont_save = client.query_user_details(uid, into_mongo=False)
 
 # 如果需要保存结果至MongoDB的“用户信息”数据库中的“详细信息”集合
-user_info_saved = client.query_user_details(dbName="用户信息", collectionName="详细信息")
+user_info_saved = client.query_user_details(uid, dbName="用户信息", collectionName="详细信息")
 ```
 
 返回：
@@ -1459,9 +1461,9 @@ ret03 = client.post_tweet("[作揖][兔子]新年快乐~",
                           mid=video_mid,
                           pid=cover_pid,
                           video_down=True,  # 允许下载
-                          schedule_time=schedule_time, #定时发布时间
+                          schedule_time=schedule_time,  # 定时发布时间
                           video_title=video_name,  # 视频标题，可不写
-                          video_type=Video.ORIGINAL, # 表示原创视频,详细可见weibo.consts的Video类
-                          visible=Visible.FANS, #粉丝可见,详情可见函数注释
+                          video_type=Video.ORIGINAL,  # 表示原创视频,详细可见weibo.consts的Video类
+                          visible=Visible.FANS,  # 粉丝可见,详情可见函数注释
                           )
 ```
