@@ -2,10 +2,10 @@ cookies:
   # This file is to configure the weibo account cookies for web version or H5 version.
   # Just copy and paste the cookie value of the browser request "headers".
   # Cookies of web version:
-  web:
-    - xxxxxx
+  web: 
+    - your web cookie str
 
 
   # Cookies of H5 version:
   h5:
-    - xxxxxx
+    - your h5 cookie str
